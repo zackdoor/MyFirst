@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>bedrocklauncher.github.io — Logo demo</title>
+
+  <!-- Press Start 2P (pixel-like) as fallback/quick start -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    /* If you have the real Minecraft font file (proprietary), place it in /fonts/Minecraft.ttf
+       and the browser will use it (replace the TTF file with your copy). */
+    @font-face {
+      font-family: "MinecraftOfficial";
+      src: url("fonts/Minecraft.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root{
+      --bg:#0f1113;
+      --plate:#0b8f3a; /* green block tone for accent if needed */
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "MinecraftOfficial", "Press Start 2P", monospace;
+      background: linear-gradient(180deg,#0b0d0f 0%, #181b1e 100%);
+      color: #eee;
+      -webkit-font-smoothing: none;
+      text-rendering: geometricPrecision;
+    }
+
+    .center {
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      box-sizing:border-box;
+    }
+
+    .logo {
+      text-align:center;
+      user-select:none;
+    }
+
+    /* Large Minecraft-like pixel logo */
+    .logo .main {
+      font-size: clamp(28px, 9vw, 96px);
+      line-height: 0.9;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display:inline-block;
+      padding: 18px 28px;
+      border-radius: 6px;
+      position: relative;
+      /* blocky 3D style using text-shadow layers */
+      color: #ffffff;
+      background: linear-gradient(180deg,#f7f7f7 0%, #dcdcdc 55%, #bfbfbf 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      /* heavy pixelated outline using layered shadows */
+      text-shadow:
+        /* outline */
+        -2px -2px 0 #000, 2px -2px 0 #000,
+        -2px 2px 0 #000, 2px 2px 0 #000,
+        0px 4px 0 #000, 0px 6px 0 rgba(0,0,0,0.6),
+        0px 10px 6px rgba(0,0,0,0.6);
+      /* crisp edges on scaled text */
+      transform: translateZ(0);
+      image-rendering: optimizeSpeed;
+    }
+
+    /* small green subtitle like Bedrock style (optional) */
+    .logo .sub {
+      display:block;
+      margin-top:10px;
+      font-size: clamp(10px, 2.6vw, 20px);
+      letter-spacing: 1px;
+      color: #0f6f2b;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.03), 0 2px 0 rgba(0,0,0,0.5);
+      font-weight:700;
+    }
+
+    /* optional pixel border around the text to emulate Minecraft logo block */
+    .logo .frame {
+      display:inline-block;
+      padding: 10px 18px;
+      border: 6px solid #0b0b0b;
+      box-shadow: 0 8px 0 rgba(0,0,0,0.6);
+      border-radius: 4px;
+      background: linear-gradient(180deg,#4d4d4d 0%, #2b2b2b 100%);
+      transform: translateY(-4px); /* lift effect */
+    }
+
+    /* responsiveness */
+    @media (max-width:420px){
+      .logo .main { letter-spacing: 1px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <div class="logo">
+      <div class="frame">
+        <div class="main">bedrocklauncher.github.io</div>
+      </div>
+      <div class="sub">An unofficial Minecraft Bedrock for Windows Launcher</div>
+    </div>
+  </div>
+</body>
+</html>
